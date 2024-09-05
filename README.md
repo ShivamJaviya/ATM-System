@@ -1,23 +1,74 @@
-"# ATM-System" 
-DATABASE :
+# 💳 ATM System
 
+This **ATM System** project is built in Java, utilizing a **User Interface**, **MySQL Database**, **Multithreading**, and **Object-Oriented Programming** concepts. The system mimics basic ATM functionalities, including user sign-up, login, and transactions.
 
-create database bankSystem;
-use bankSystem;
+## 🗂 Features
+- 🖥️ **User Interface**: Interactive UI for easy navigation.
+- 🗄️ **Database Management**: Stores user details and transactions securely using MySQL.
+- 🧵 **Multithreading**: Ensures smooth execution of simultaneous user operations.
+- 🧑‍💻 **OOP Concepts**: Applied OOP principles for better system structure.
 
-create table signup(form_no varchar(30), name varchar(30), father_name varchar(30), DOB varchar(30),gender varchar (30), email varchar(60) ,marital_status varchar(30),address varchar(60),city varchar(60),pincode varchar(60),state varchar(60));
+## 🏦 Database Structure
 
-select * from signup;
+```sql
+-- Create Database
+CREATE DATABASE bankSystem;
+USE bankSystem;
 
-create table signuptwo(form_no varchar(30), religion varchar(30), category varchar(30), income varchar(30),education varchar (30), occcupation varchar(60) ,pan varchar(30),aadhar varchar(60),seniorcitizen varchar(60),exisiting_account varchar(60));
+-- Table for user sign-up details
+CREATE TABLE signup(
+    form_no VARCHAR(30),
+    name VARCHAR(30),
+    father_name VARCHAR(30),
+    DOB VARCHAR(30),
+    gender VARCHAR(30),
+    email VARCHAR(60),
+    marital_status VARCHAR(30),
+    address VARCHAR(60),
+    city VARCHAR(60),
+    pincode VARCHAR(60),
+    state VARCHAR(60)
+);
+SELECT * FROM signup;
 
-select * from signuptwo;
+-- Table for additional user information
+CREATE TABLE signuptwo(
+    form_no VARCHAR(30),
+    religion VARCHAR(30),
+    category VARCHAR(30),
+    income VARCHAR(30),
+    education VARCHAR(30),
+    occcupation VARCHAR(60),
+    pan VARCHAR(30),
+    aadhar VARCHAR(60),
+    seniorcitizen VARCHAR(60),
+    existing_account VARCHAR(60)
+);
+SELECT * FROM signuptwo;
 
-create table signupthree(form_no varchar(30), account_Type varchar(30), card_number varchar(30), pin varchar(30),facility varchar (300) );
-select * from signupthree;
+-- Table for account and card details
+CREATE TABLE signupthree(
+    form_no VARCHAR(30),
+    account_Type VARCHAR(30),
+    card_number VARCHAR(30),
+    pin VARCHAR(30),
+    facility VARCHAR(300)
+);
+SELECT * FROM signupthree;
 
-create table login(form_no varchar(30), card_number varchar(30),pin varchar(30));
-select * from login;
-create table bank(pin varchar(30),date varchar(30), type varchar(30),amount varchar(30));
-SELECT * from bank;
+-- Table for login information
+CREATE TABLE login(
+    form_no VARCHAR(30),
+    card_number VARCHAR(30),
+    pin VARCHAR(30)
+);
+SELECT * FROM login;
 
+-- Table for banking transactions
+CREATE TABLE bank(
+    pin VARCHAR(30),
+    date VARCHAR(30),
+    type VARCHAR(30),
+    amount VARCHAR(30)
+);
+SELECT * FROM bank;
